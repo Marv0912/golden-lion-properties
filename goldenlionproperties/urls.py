@@ -17,9 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from Listing.views import home
-from Listing.views import contactUs
-from Listing.views import listing
+from Listing.views import home, contactUs, listing, create_listing
+
 
 
 urlpatterns = [
@@ -27,4 +26,5 @@ urlpatterns = [
     path('listing:id/', listing, name='listing'),
     path('contactUs/', contactUs, name='contactUs'),
     path("admin/", admin.site.urls),
+    path('create/', create_listing, name='create_listing')
 ]
