@@ -18,9 +18,13 @@ from django.contrib import admin
 from django.urls import path
 
 from Listing.views import home
+from Listing.views import contactUs
+from Listing.views import listing
 
 
 urlpatterns = [
     path('', home, name='home'),
+    path('listing:id/', listing, name='listing'),
+    path('contactUs/', contactUs, name='contactUs'),
     path("admin/", admin.site.urls),
 ]
