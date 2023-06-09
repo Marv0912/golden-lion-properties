@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Listing Details</h2>
+<div class="listing">
+    <h3>{{ property.name }}</h3>
+    <p>Address: {{ property.address }}</p>
+    <p>Price: ${{ property.price }}</p>
+    <p>Status: {{ property.status }}</p>
+    <p>Bedrooms: {{ property.bedrooms }}</p>
+    <p>Bathrooms: {{ property.bathrooms }}</p>
+    <p>Description: {{ property.description }}</p>
+    <p>Location: {{ property.location }}</p>
+    <p>Square Feet: {{ property.sqft }}</p>
+    <p>Date Listed: {{ property.date_listed }}</p>
+</div>
+{% endblock %}

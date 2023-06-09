@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from .forms import ListingForm
+from .models import Property
 
 def home(request):
-    return render(request, 'home/home.html')
+    properties = Property.objects.all()
+    return render(request, 'home/home.html', {'properties': properties})
 
-def listing(request):
-    return render(request, 'listing/listing.html')
+def listing(request, listing_id):
+    property = Property.objects.get(id=listing_id)
+    return render(request, 'listing/listing_details.html', {'property': property})
 
 def contactUs(request):
     return render(request, 'contactUs/contactUs.html')
