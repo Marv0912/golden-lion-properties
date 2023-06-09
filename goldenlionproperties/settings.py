@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+# The os module allows you to perform tasks such as manipulating file paths, creating and deleting directories, accessing environment variables, executing shell commands, and more. It provides a platform-independent way to work with the underlying operating system, so you can write code that can run on different operating systems without modifications.
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -69,6 +71,10 @@ TEMPLATES = [
         },
     },
 ]
+
+#MEDIA IMGS
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 WSGI_APPLICATION = "goldenlionproperties.wsgi.application"
 

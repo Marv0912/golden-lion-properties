@@ -18,13 +18,20 @@ from django.contrib import admin
 from django.urls import path
 
 from Listing.views import home, contactUs, listing, create_listing
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
 urlpatterns = [
     path('', home, name='home'),
-    path('listing:id/', listing, name='listing'),
+    path('listing/<int:listing_id>', listing, name='listing'),
     path('contactUs/', contactUs, name='contactUs'),
     path("admin/", admin.site.urls),
     path('create/', create_listing, name='create_listing')
 ]
+
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
