@@ -1,5 +1,5 @@
 from django import forms
-from .models import Listing
+from .models import Property
 
 class ListingForm(forms.ModelForm):
     
@@ -8,5 +8,5 @@ class ListingForm(forms.ModelForm):
         if price < 0:
             raise forms.ValidationError("Price cannot be negative. ")
     class Meta:
-        model = Listing
+        model = Property
         fields = '__all__'

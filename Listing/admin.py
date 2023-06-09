@@ -2,5 +2,9 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Property
+from .forms import ListingForm
 
-admin.site.register(Property)
+class ListingAdmin(admin.ModelAdmin):
+    form = ListingForm
+
+admin.site.register(Property, ListingAdmin)
