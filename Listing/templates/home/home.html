@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h3>hi</h3>
 
-
+<h1>Welcome to Golden Lion Properties</h1>
+<h3>Latest Listings:</h3>
+{% for property in properties %}
+<div class="listing">
+    <h4>{{ property.name }}</h4>
+    <p>${{ property.price }}</p>
+    <p>{{ property.status }}</p>
+    <p>Listed {{}property.date_listed}</p>
+    
+</div>
+{% empty %}
+<p>No listings available.</p>
+{% endfor %}
 {% endblock %}
