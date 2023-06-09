@@ -12,3 +12,7 @@ class Property(models.Model):
     location = models.CharField(max_length=100, default=1)
     sqft = models.IntegerField(default=1)
     date_listed = models.DateField(default=datetime.date.today)
+    image = models.ImageField(upload_to='property_images')
+
+    def __str__(self):
+        return self.name
