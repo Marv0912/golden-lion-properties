@@ -6,7 +6,8 @@
 <h3>Latest Listings:</h3>
 {% for property in properties %}
 <div class="listing">
-    <a href="{% url 'listing/<int:listing_id>' listing.id %}">View Listing</a>
+    <a href="{% url 'listing' property.id %}">View Listing</a>
+
     <h4>{{ property.name }}</h4>
     <p>${{ property.price }}</p>
     <p>{{ property.status }}</p>

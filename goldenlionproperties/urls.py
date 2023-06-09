@@ -25,7 +25,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', home, name='home'),
-    path('listing/<int:listing_id>/', listing, name='listing'), ##FIX
+    path('listing/<int:listing_id>/', listing, name='listing'),
     path('contactUs/', contactUs, name='contactUs'),
     path("admin/", admin.site.urls),
     path('create/', create_listing, name='create_listing')

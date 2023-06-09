@@ -8,7 +8,7 @@ def home(request):
     return render(request, 'home/home.html', {'properties': properties})
 
 def listing(request, listing_id):
-    property = get_object_or_404(Property, id=listing_id)
+    property = get_object_or_404(Property)
     return render(request, 'listing/listing_details.html', {'property': property})
 
 def contactUs(request):
