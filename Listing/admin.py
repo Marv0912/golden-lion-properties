@@ -7,4 +7,5 @@ from .forms import ListingForm
 class ListingAdmin(admin.ModelAdmin):
     form = ListingForm
 
-admin.site.register(Property, ListingAdmin, ContactMessage)
+admin.site.register(Property, ListingAdmin)
+admin.site.register(ContactMessage)
