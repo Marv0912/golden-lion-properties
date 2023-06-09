@@ -9,8 +9,9 @@
     <h4>{{ property.name }}</h4>
     <p>${{ property.price }}</p>
     <p>{{ property.status }}</p>
-    <p>Listed {{}property.date_listed}</p>
-    
+    <p>{{property.address}}</p>
+    <p>Listed {{property.date_listed}}</p>
+
 </div>
 {% empty %}
 <p>No listings available.</p>
