@@ -22,4 +22,5 @@ Welcome to Golden Lion Properties! This is a web application designed for managi
 
 ## Icebox Features
 - Create search feature by sorting properties from listings such as price and location.
-- User Auth so users can save listings for future sightings.
+- User Auth so users can save listings for future reference.
+- Admin receives email notifications when messages are sent.
