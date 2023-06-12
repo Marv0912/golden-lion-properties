@@ -19,3 +19,7 @@ Welcome to Golden Lion Properties! This is a web application designed for managi
 - Materialize CSS: CSS framework for responsive design and UI components.
 - PostgreSQL: Database management system for storing property and contact data.
 - Heroku: Platform for deploying the application.
+
+## Icebox Features
+- Create search feature by sorting properties from listings such as price and location.
+- User Auth so users can save listings for future sightings.
