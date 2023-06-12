@@ -1,6 +1,8 @@
 # Golden Lion Properties
 
 Welcome to Golden Lion Properties! This is a web application designed for managing property listings and contact messages. It provides a user-friendly interface for users to view and search for properties, as well as contact the site administrators.
+<img width="1226" alt="Screen Shot 2023-06-12 at 12 11 56 PM" src="https://github.com/Marv0912/golden-lion-properties/assets/104529170/8c70e422-639e-4cfb-85d4-0aeb423ea23f">
+
 
 ## Features
 
