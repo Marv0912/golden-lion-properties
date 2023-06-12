@@ -11,11 +11,17 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from configparser import ConfigParser
+
+
 # The os module allows you to perform tasks such as manipulating file paths, creating and deleting directories, accessing environment variables, executing shell commands, and more. It provides a platform-independent way to work with the underlying operating system, so you can write code that can run on different operating systems without modifications.
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+config = ConfigParser()
+config.read(os.path.join(BASE_DIR, 'config.ini'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -92,6 +98,13 @@ DATABASES = {
         'PORT': '5432',         # The port number of your PostgreSQL server
     }
 }
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.me.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'marvin.fajardo.s@icloud.com'
+EMAIL_HOST_PASSWORD = 'mgwf-snzj-carl-nswp'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'marvin.fajardo.s@icloud.com'
 
 
 # Password validation
@@ -106,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
 ]
 
-
+GOOGLE_MAPS_API_KEY = 'AIzaSyBwdt28jAsrpNfoM0sbhdzFsUXZI-FWNhA'
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -118,6 +131,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+#API
+# GOOGLE_MAPS_API_KEY = config['API']['GOOGLE_MAPS_API_KEY']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

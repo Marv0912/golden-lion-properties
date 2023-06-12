@@ -9,8 +9,8 @@
 
 <div class="row">
     {% for property in properties %}
-    <a href="{% url 'listing' property.id %}" class="listing-link">
-        <div class="col s12 m6 l4">
+    <div class="col s12 m6">
+        <a href="{% url 'listing' property.id %}" class="listing-link">
             <div class="listing z-depth-1">
                 <div class="img">
                     <img src="{{ property.image.url }}" alt="{{ property.name }} Image">
@@ -25,8 +25,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
     {% empty %}
     <p>No listings available.</p>
     {% endfor %}

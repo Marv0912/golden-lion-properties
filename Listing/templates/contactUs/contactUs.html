@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h4>Contact Us</h4>
-<form method="post" action="{% url 'contact' %}">
+<h2>Contact Us</h2>
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit</button>
+    <button class="btn blue btn-small center-align" style="margin-top: 20px; margin-bottom: 20px;" type="submit">Submit</button>
 </form>
 {% endblock %}

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Property
+from .models import Property, ContactMessage
 
 class ListingForm(forms.ModelForm):
     
@@ -12,9 +12,8 @@ class ListingForm(forms.ModelForm):
         fields = '__all__'
 
 
-class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100)
-    email = forms.EmailField()
-    subject = forms.CharField(max_length=200)
-    message = forms.CharField(widget=forms.Textarea)
+class ContactForm(forms.ModelForm):
+   class Meta:
+        model = ContactMessage
+        fields = ['name', 'email', 'subject', 'message']
 

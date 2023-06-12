@@ -1,17 +1,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Listing Details</h2>
-<div class="listing">
-    <h3>{{ property.name }}</h3>
-    <p>Address: {{ property.address }}</p>
-    <p>Price: ${{ property.price }}</p>
-    <p>Status: {{ property.status }}</p>
-    <p>Bedrooms: {{ property.bedrooms }}</p>
-    <p>Bathrooms: {{ property.bathrooms }}</p>
-    <p>Description: {{ property.description }}</p>
-    <p>Location: {{ property.location }}</p>
-    <p>Square Feet: {{ property.sqft }}</p>
-    <p>Date Listed: {{ property.date_listed }}</p>
+<h3>Listing Details</h3>
+<div class="row">
+    <div class="col s6">
+        <div class="image-container">
+            <img src="{{ property.image.url }}" alt="Property Image">
+        </div>
+    </div>
+    <div class="col s6">
+        <div class="listing-details">
+            <h5>${{ property.price }}</h5>
+            <p>Address: {{ property.address }}</p>
+            <p>Status: {{ property.status }}</p>
+            <p>Bedrooms: {{ property.bedrooms }}</p>
+            <p>Bathrooms: {{ property.bathrooms }}</p>
+            <p>Description: {{ property.description }}</p>
+            <p>Square Feet: {{ property.sqft }}</p>
+            <p>Date Listed: {{ property.date_listed }}</p>
+            <p>Location: {{ property.location }}</p>
+        </div>
+    </div>
 </div>
+
+<!-- Embed Google Maps -->
+<div class="row">
+    <div class="col s12">
+        <div class="center-align" id="map" ></div>
+    </div>
+</div>
+<script type="text/javascript">
+    function initMap() {
+        var latitude = {{ property.latitude }};
+        var longitude = {{ property.longitude }};
+        var apiKey = '{{ google_maps_api_key }}';
+
+        // Create map centered on the property location
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: latitude, lng: longitude },
+            zoom: 12
+        });
+
+        // Place a marker at the property location
+        var marker = new google.maps.Marker({
+            position: { lat: latitude, lng: longitude },
+            map: map,
+            title: '{{ property.name }}'
+        });
+    }
+</script>
+
+<!-- Load Google Maps API with API key from server-side -->
+<script src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&callback=initMap" async
+    defer></script>
 {% endblock %}
