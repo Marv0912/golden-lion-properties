@@ -10,7 +10,7 @@ def home(request):
     return render(request, 'home/home.html', {'properties': properties})
 
 def listing(request, listing_id):
-    property = get_object_or_404(Property)
+    property = get_object_or_404(Property, id=listing_id)
     return render(request, 'listing/listing_details.html', {'property': property})
 
 def contactUs(request):
@@ -29,7 +29,7 @@ def create_listing(request):
 class ContactFormView(View):
     def get(self, request):
         form = ContactForm()
-        return render(request, 'contact_form.html', {'form': form})
+        return render(request, 'contactUs/contactUs.html', {'form': form})
 
     def post(self, request):
         form = ContactForm(request.POST)
@@ -50,4 +50,4 @@ class ContactFormView(View):
 
             return render(request, 'contact_success.html')
         else:
-            return render(request, 'contact_form.html', {'form': form})
+            return render(request, 'contactUs.html', {'form': form})

@@ -29,7 +29,7 @@ urlpatterns = [
     path('contactUs/', contactUs, name='contactUs'),
     path("admin/", admin.site.urls),
     path('create/', create_listing, name='create_listing'),
-    path('contact/', ContactFormView.as_view(), name='contact'),
+    path('contactUs/', ContactFormView.as_view(), name='contact'),
 ]
 
 # Serve media files during development

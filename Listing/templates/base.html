@@ -8,12 +8,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Golden Lion Properties</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
   <header class="navbar-fixed">
-    <nav>
+    <nav class="yellowish-bg">
       <div class="nav-wrapper">
         <ul>
           <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Golden Lion Properties</a></li>
@@ -28,8 +28,8 @@
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="page-footer">
+  <footer class="page-footer yellowish-bg">
     <div class="right">All Rights Reserved, &copy; 2023 Golden Lion Properties &nbsp;</div>
-  </footer>
+  </footer >
 </body>
 </html>
