@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'Listing',
+    'golden_lion_properties',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "goldenlionproperties.urls"
+ROOT_URLCONF = "golden_lion_properties.urls"
 
 TEMPLATES = [
     {
@@ -81,7 +82,7 @@ TEMPLATES = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-WSGI_APPLICATION = "goldenlionproperties.wsgi.application"
+WSGI_APPLICATION = "golden_lion_properties.wsgi.application"
 
 
 # Database
