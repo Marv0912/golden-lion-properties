@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Results</h2>
+
+{% if properties %}
+<ul>
+    {% for property in properties %}
+    <div class="col s12 m6">
+        <a href="{% url 'listing' property.id %}" class="listing-link">
+            <div class="listing z-depth-1">
+                <div class="img">
+                    <img src="{{ property.image.url }}" alt="{{ property.name }} Image">
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col s12">
+                            <p class="price">${{ property.price }}</p>
+                            <p class="lighter-font">{{ property.bedrooms }} bd | {{ property.bathrooms }} ba | {{ property.sqft }} sqft - {{ property.status }}</p>
+                            <p class="lighter-font">{{ property.address }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No properties found.</p>
+{% endif %}
+{% endblock %}

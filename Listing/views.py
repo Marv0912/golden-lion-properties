@@ -3,7 +3,7 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.views.generic.edit import FormView
-from .forms import ListingForm, ContactForm
+from .forms import ListingForm, ContactForm, PropertySearchForm
 from .models import Property
 
 # By using the View class, you have the flexibility to define the HTTP methods (GET, POST, PUT, DELETE, etc.) and handle the corresponding logic within your view methods.
@@ -47,3 +47,31 @@ class ContactFormView(FormView):
         # Uncomment the following lines and customize them based on your needs
         # admin_email = 'admin@example.com'
         # send_email_to_admin(admin_email, form.cleaned_data['name'], form.cleaned_data['email'], form.cleaned_data['subject'], form.cleaned_data['message'])
+
+def property_search_view(request):
+    form = PropertySearchForm(request.GET or None)
+    if request.method == 'POST':
+        form = PropertySearchForm(request.POST)
+        
+    if form.is_valid():
+        price_min = form.cleaned_data['price_min']
+        price_max = form.cleaned_data['price_max']
+        bedrooms = form.cleaned_data['bedrooms']
+        bathrooms = form.cleaned_data['bathrooms']
+
+        # Perform the search query using filter conditions
+        properties = Property.objects.filter(
+            price__range=(price_min, price_max),
+            bedrooms=bedrooms,
+            bathrooms=bathrooms
+        )
+
+        context = {
+            'properties': properties
+        }
+        return render(request, 'search/search_results.html', context)
+
+    context = {
+        'form': form
+    }
+    return render(request, 'search/property_search.html', context)

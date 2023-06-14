@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Search</h2>
+<form method="GET" action="{% url 'property_search' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn blue btn-small center-align" style="margin-top: 20px; margin-bottom: 20px;" type="submit">Search</button>
+</form>
+{% endblock %}

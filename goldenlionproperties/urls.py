@@ -17,19 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from Listing.views import home, listing, create_listing
+from Listing.views import home, listing, create_listing, property_search_view
 from Listing.views import ContactFormView
 from django.conf import settings
 from django.conf.urls.static import static
-
 
 
 urlpatterns = [
     path('', home, name='home'),
     path('listing/<int:listing_id>/', listing, name='listing'),
     path('contactUs/', ContactFormView.as_view(), name='contact'),
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
     path('create/', create_listing, name='create_listing'),
+    path('search/', property_search_view, name='property_search'),
 ]
 
 # Serve media files during development
