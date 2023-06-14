@@ -92,8 +92,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'glp',
-        'USER': 'marvinfajardo',#<-- (optional) postgres user name, if you have to sign into an account to open psql, you will want to add that user name here.
-        'PASSWORD': 'NivRam7878', #<-- (optional) postgres user password, if you have to sign into an account to open psql, you will want to add that user password here.
+        'USER': 'marvinfajardo',
+        'PASSWORD': 'NivRam7878', 
         'PORT': 5432 
     }
 }
@@ -144,5 +144,5 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-import django_heroku
-django_heroku.settings(locals())
+import django_on_heroku
+django_on_heroku.settings(locals())
