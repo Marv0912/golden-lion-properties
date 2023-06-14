@@ -89,8 +89,13 @@ WSGI_APPLICATION = "golden_lion_properties.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-
-    'default': dj_database_url.config(default='postgres://localhost:5432/glp')
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'glp',
+        'USER': 'marvinfajardo',#<-- (optional) postgres user name, if you have to sign into an account to open psql, you will want to add that user name here.
+        'PASSWORD': 'NivRam7878', #<-- (optional) postgres user password, if you have to sign into an account to open psql, you will want to add that user password here.
+        'PORT': 5432 
+    }
 }
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mail.me.com'

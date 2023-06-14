@@ -78,7 +78,7 @@ p {
 .footer-bg {
     background-color: #333;
     width: 100%;
-    
+
 }
 
 #map {
@@ -151,6 +151,13 @@ p {
         top: 100%;
         left: 0;
         right: 0;
+        display: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .navbar-mobile.active {
+        display: block;
+        opacity: 1;
     }
 
     .navbar-mobile a {
