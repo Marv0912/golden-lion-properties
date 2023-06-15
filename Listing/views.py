@@ -39,7 +39,11 @@ class ContactFormView(FormView):
         admin_email = 'marvin.fajardo.s@icloud.com'
         subject = f"New Contact Message: {form_data['subject']}"
         message = f"Name: {form_data['name']}\nEmail: {form_data['email']}\n\n{form_data['message']}"
-        send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [admin_email])
+        send_mail(
+            subject, 
+            message,
+            [admin_email],
+            )
         # Process the form data here
         # You can save the message to the database or send email notifications
 

@@ -97,14 +97,6 @@ DATABASES = {
         'PORT': 5432 
     }
 }
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.mail.me.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'marvin.fajardo.s@icloud.com'
-EMAIL_HOST_PASSWORD = 'mgwf-snzj-carl-nswp'
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'marvin.fajardo.s@icloud.com'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -138,7 +130,15 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+#Email settings
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.icloud.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'marvin.fajardo.s@icloud.com'
+EMAIL_HOST_PASSWORD = 'mgwf-snzj-carl-nswp'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'marvin.fajardo.s@icloud.com'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
